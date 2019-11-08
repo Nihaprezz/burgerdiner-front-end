@@ -28,18 +28,7 @@ input[type=submit]{
     padding: 8px 32px;
     text-decoration: double;
     margin: 4px 2px;
-    cursor: pointer;
+    cursor: url(src/images/burger.png), pointer;
 }
 
-input[type=submit]:hover {
-    background-image: url("src/assets/burger.svg");
-    background-repeat: no-repeat;
-}
-
-/*#username-form {*/
-/*    cursor: url('src/assets/burger.svg');*/
-/*}*/
-/*.custom{*/
-/*    cursor: url('images/burger.png'), auto;*/
-/*}*/
 
