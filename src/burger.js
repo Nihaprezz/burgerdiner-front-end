@@ -11,11 +11,6 @@ function fetchFirstBurger(event) {
     })
 }
 
-function createGameScreen(){
-    let allContainer = document.querySelector('#all-page')
-    allContainer.innerText = '';
-}
-
 function renderFirstBurger(burger){
     console.log(burger) //printes out the burger
 }
