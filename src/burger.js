@@ -11,6 +11,37 @@ function fetchFirstBurger(event) {
     })
 }
 
+<<<<<<< HEAD
+=======
+function createGameScreen(){
+    let allContainer = document.querySelector('#all-page');
+    allContainer.innerText = '';
+}
+
+>>>>>>> b000e2ddb2028a275a800ef08b01bc6b137ae469
 function renderFirstBurger(burger){
-    console.log(burger) //printes out the burger
+    //recipe name in a div
+    //in another div create ol and  pull ingredients list in an li within the ol
+    let webBody = document.getElementById('all-page');
+    let ingredients = document.createElement('div');
+    let burgerName = document.createElement('h2');
+    let ingredientsOl = document.createElement('ol');
+
+    webBody.appendChild(ingredients);
+    ingredients.appendChild(burgerName);
+    ingredients.appendChild(ingredientsOl);
+
+    ingredients.classList.add('ingredients-list');
+
+    burger.forEach(recipes => {
+        burgerName.innerText = recipes.recipe.name
+    });
+
+    burger.forEach(function(ingredients) {
+        let ingredientsLi = document.createElement('li');
+        ingredientsLi.innerText = ingredients.ingredient.name;
+        ingredientsOl.append(ingredientsLi);
+    });
+
+
 }
