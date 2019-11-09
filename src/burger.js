@@ -11,14 +11,11 @@ function fetchFirstBurger(event) {
     })
 }
 
-<<<<<<< HEAD
-=======
 function createGameScreen(){
     let allContainer = document.querySelector('#all-page');
     allContainer.innerText = '';
 }
 
->>>>>>> b000e2ddb2028a275a800ef08b01bc6b137ae469
 function renderFirstBurger(burger){
     //recipe name in a div
     //in another div create ol and  pull ingredients list in an li within the ol
