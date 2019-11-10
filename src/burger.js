@@ -1,12 +1,11 @@
 function fetchFirstBurger(event) {
     event.preventDefault()
 
-    createGameScreen()
-
     let firstBurger = 1 ;
     fetch(`http://localhost:3000/burgers_recipe/${firstBurger}`)
     .then( response => response.json())
     .then(function(burger){
+        createGameScreen(burger);
         renderFirstBurger(burger);
     })
 }
@@ -20,6 +19,7 @@ function renderFirstBurger(burger){
     //recipe name in a div
     //in another div create ol and  pull ingredients list in an li within the ol
     let webBody = document.getElementById('all-page');
+    webBody.classList.add('grid-display-added');
     let ingredients = document.createElement('div');
     let burgerName = document.createElement('h2');
     let ingredientsOl = document.createElement('ol');

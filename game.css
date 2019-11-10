@@ -1,8 +1,33 @@
+/* will be displaying a grid */
+.adding-grid-diplay {
+    display: grid;
+}
+
 .game-container {
     border: 5px solid white;
 }
 
 .timer-level-container {
     border: 5px solid green;
+    color: white;
+}
+
+.all-ingredients-container {
+    border: 5px solid red;
+    color: white;
+}
+
+.plate-container {
+    border: 5px solid blue;
+    color: white;
+}
+
+.food-item-container {
+    border: 5px solid green;
+    color: white;
+}
+
+.random-ingredients-container {
+    border: 5px solid pink;
     color: white;
 }
