@@ -53,7 +53,30 @@ function genRightAndRandomIngreds(burger){
     fetch('http://localhost:3000/ingredients')
     .then(resp => resp.json())
     .then(allIngredients =>  {
-        console.log(allIngredients)
+        renderAllIngredients(allIngredients)
+    })
+}
+
+function renderAllIngredients(allIngredients){
+    let ingredientContainer = document.querySelector('.random-ingredients-container')
+    ingredientContainer.classList.add('random-ingredients-container-grid')
+
+    //creating the divs for every image
+    
+    allIngredients.forEach(ingredient => {
+        let imageContainer = document.createElement('div');
+        let ingredientImage = document.createElement("img");
+        ingredientImage.srcset = ingredient.image_url
+        // ingredientImage.classList.add("ui", "medium", "circular", "image");
+        imageContainer.classList.add("ui", "small", "image")
+        imageContainer.addEventListener('click', addToPlate) //clickeven function to add to plate divs
+
+        imageContainer.append(ingredientImage)
+        ingredientContainer.append(imageContainer);
     })
 
+}
+
+function addToPlate(){
+    console.log('added to plate');
 }

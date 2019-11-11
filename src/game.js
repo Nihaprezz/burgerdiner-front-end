@@ -31,8 +31,8 @@ function createGameScreen(burger){
 
     //creating the divs for every ingredient
     let plateContainer = document.createElement('div');
-    plateContainer.innerText = 'This will be the "plate"container'
     plateContainer.classList.add('plate-container')
+    plateContainer.classList.add('plate-container-grid');
     burger.forEach(function(array){
         let foodItem = document.createElement('div');
         foodItem.id = `ingredient-${array.id}`
@@ -46,7 +46,6 @@ function createGameScreen(burger){
     //Ingredients that user will be able to click on or drag tooo
     let randomIngredientsContainer  = document.createElement('div');
     randomIngredientsContainer.classList.add('random-ingredients-container')
-    randomIngredientsContainer.innerText = "This will be where the random ingredients will populate"
 
 
 

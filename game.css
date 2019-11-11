@@ -11,7 +11,7 @@
 }
 
 .game-container {
-    border: 5px solid white;
+    border: 5px solid black;
 }
 
 .game-header-container {
@@ -38,6 +38,11 @@
     grid-area: placeholder;
 }
 
+.plate-container-grid {
+    display: grid;
+    grid-row-gap: 5%;
+}
+
 .food-item-container {
     border: 5px solid green;
     color: white;
@@ -47,4 +52,11 @@
     border: 5px solid pink;
     color: white;
     grid-area: ingredients;
+}
+
+.random-ingredients-container-grid {
+    display: grid;
+    grid-template-columns: 33% 33% auto;
+    grid-gap: 5px;
+    justify-items: center;
 }
