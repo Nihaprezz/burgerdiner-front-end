@@ -1,0 +1,219 @@
+.wrapper {
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    width: 550px;
+    height: 300px;
+    padding-top: 30px;
+}
+
+.hamburger {
+    margin: 0 auto;
+    height: 400px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    text-align: center;
+}
+
+.item {
+    position: relative;
+    transition: 0.3s;
+}
+
+.link {
+    position: absolute;
+    left: 20%;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    color: inherit;
+    text-decoration: none;
+    font-size: 1.5em;
+    opacity: 0;
+    transition: 0.3s 0.1s;
+    z-index: 2;
+}
+
+.shadow {
+    height: 30px;
+    border-radius: 50%;
+    width: 170px;
+    margin: 0 auto;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+    -webkit-transform: translateY(-115px);
+    transform: translateY(-115px);
+    transition: 0.9s;
+}
+
+.slide-in {
+    opacity: 1;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    transition: 0.3s;
+}
+
+.fade {
+    opacity: .2;
+    transition: 0.3s;
+}
+
+.fade-out {
+    opacity: 0;
+    transition: 0.9s;
+}
+
+.bun_top {
+    -webkit-transform: translateY(95px);
+    transform: translateY(95px);
+}
+
+.tomato {
+    -webkit-transform: translateY(75px);
+    transform: translateY(75px);
+}
+
+.lettuce {
+    -webkit-transform: translateY(45px);
+    transform: translateY(45px);
+}
+
+.pickle {
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+}
+
+.cheese {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+}
+
+.bacon {
+    -webkit-transform: translateY(-40px);
+    transform: translateY(-40px);
+}
+
+.burger {
+    -webkit-transform: translateY(-75px);
+    transform: translateY(-75px);
+}
+
+.bun_bottom {
+    -webkit-transform: translateY(-95px);
+    transform: translateY(-95px);
+}
+
+.item.bun_top-explode {
+    position: relative;
+    transition: 0.25s;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+}
+
+.item.tomato-explode {
+    position: relative;
+    transition: 0.25s;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+}
+
+.item.lettuce-explode {
+    position: relative;
+    transition: 0.25s;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+}
+
+.item.pickle-explode {
+    position: relative;
+    transition: 0.25s;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+}
+
+.item.cheese-explode {
+    position: relative;
+    transition: 0.25s;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+}
+
+.item.bacon-explode {
+    position: relative;
+    transition: 0.25s;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+}
+
+.item.burger-explode {
+    position: relative;
+    transition: 0.25s;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+}
+
+.item.bun_bottom-explode {
+    position: relative;
+    transition: 0.25s;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+}
+
+.bun_top-hover {
+    -webkit-transform: translateY(85.5px);
+    transform: translateY(85.5px);
+    position: relative;
+    transition: 0.15s;
+}
+
+.tomato-hover {
+    -webkit-transform: translateY(67.5px);
+    transform: translateY(67.5px);
+    position: relative;
+    transition: 0.15s;
+}
+
+.lettuce-hover {
+    -webkit-transform: translateY(40.5px);
+    transform: translateY(40.5px);
+    position: relative;
+    transition: 0.15s;
+}
+
+.pickle-hover {
+    -webkit-transform: translateY(18px);
+    transform: translateY(18px);
+    position: relative;
+    transition: 0.15s;
+}
+
+.cheese-hover {
+    -webkit-transform: translateY(-9px);
+    transform: translateY(-9px);
+    position: relative;
+    transition: 0.15s;
+}
+
+.bacon-hover {
+    -webkit-transform: translateY(-36px);
+    transform: translateY(-36px);
+    position: relative;
+    transition: 0.15s;
+}
+
+.burger-hover {
+    -webkit-transform: translateY(-67.5px);
+    transform: translateY(-67.5px);
+    position: relative;
+    transition: 0.15s;
+}
+
+.bun_bottom-hover {
+    -webkit-transform: translateY(-85.5px);
+    transform: translateY(-85.5px);
+    position: relative;
+    transition: 0.15s;
+}
