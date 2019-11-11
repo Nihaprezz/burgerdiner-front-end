@@ -20,7 +20,8 @@ function createGameScreen(burger){
     levelContainer.classList.add('difficulty-div')
 
     timerContainer.classList.add('timer-div');
-    timerContainer.innerText = "0:15";
+    
+    timerContainer.innerText = '0:15';
 
     levelTimerContainer.append(levelContainer, timerContainer); //appends the level and time tags to thier container
     levelTimerContainer.classList.add('timer-level-container')
@@ -36,7 +37,7 @@ function createGameScreen(burger){
     burger.forEach(function(array){
         let foodItem = document.createElement('div');
         foodItem.id = `ingredient-${array.id}`
-        foodItem.innerText = 'THIS WILL BE WHERE THE INGREDIENT NEEDS TO BE DRAGGED'
+        // foodItem.innerText = 'THIS WILL BE WHERE THE INGREDIENT NEEDS TO BE DRAGGED'
         foodItem.classList.add('food-item-container');
         plateContainer.append(foodItem);
     })
@@ -50,4 +51,31 @@ function createGameScreen(burger){
 
 
     allContainer.append(gameHeaderContainer, levelTimerContainer, ingredientsContainer, plateContainer, randomIngredientsContainer);
+}
+
+
+//time logic
+function createTimeLogic(){
+    let timerHTMLTag = document.querySelector('.timer-div')
+    let timerCounter = parseInt(timerHTMLTag.innerText.split(':')[1])
+ 
+    let domTimer = setInterval(function(){
+        console.log(timerCounter)
+        timerCounter--
+
+        if (timerCounter > 9 ){
+            timerHTMLTag.innerText = `0:${timerCounter}`;
+        } else if (timerCounter >= 0) {
+            timerHTMLTag.innerText = `0:0${timerCounter}`
+        } else {
+            timeUpLogic(domTimer)
+        }
+    },1000);
+}
+
+function timeUpLogic(domTimer){
+    console.log('time is up')
+    clearInterval(domTimer);
+    let currentPlate = document.querySelector('.plate-container')
+    console.log(currentPlate);
 }

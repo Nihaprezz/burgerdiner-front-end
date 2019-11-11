@@ -11,19 +11,35 @@
 }
 
 .game-container {
-    border: 5px solid black;
+    content: '';
 }
 
+/* HEADER STYLING */
 .game-header-container {
     border: 5px solid orange;
+    box-shadow: 0px 0px 50px #FFA500, inset 0px 0px 15px #FFA500;
+    
+
+    border-radius: 18px;
     color: white;
     grid-area: header;
+
+    /* text-shadow: 0px 0px 20px, 0 0 12px, 0 0 1em #FFA500, 0 0 0.5em #FFA500, 0 0 0.1em #FFA500, 0 10px 3px #000; */
 }
 
+/* .game-header-container h1 {
+    
+} */
+
+/* Level and Timer Container  */
 .timer-level-container {
     border: 5px solid green;
     color: white;
     grid-area: timer;
+
+    display: grid;
+    grid-template-rows: 50% 50%;
+    align-items: center;
 }
 
 .all-ingredients-container {

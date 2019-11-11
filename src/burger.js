@@ -7,7 +7,10 @@ function fetchFirstBurger(event) {
     .then(function(burger){
         createGameScreen(burger);
         renderFirstBurger(burger); 
+        createTimeLogic() //goes to game.js file
     })
+
+
 }
 
 function createGameScreen(){
