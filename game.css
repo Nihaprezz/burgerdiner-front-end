@@ -1,25 +1,41 @@
 /* will be displaying a grid */
 .adding-grid-diplay {
     display: grid;
+    grid-template-columns: 35% 30% auto;
+    grid-template-rows: 10% 30% auto;
+    grid-template-areas:
+    "header header header"
+    "timer list placeholder"
+    "ingredients ingredients placeholder"
+    ;
 }
 
 .game-container {
     border: 5px solid white;
 }
 
+.game-header-container {
+    border: 5px solid orange;
+    color: white;
+    grid-area: header;
+}
+
 .timer-level-container {
     border: 5px solid green;
     color: white;
+    grid-area: timer;
 }
 
 .all-ingredients-container {
     border: 5px solid red;
     color: white;
+    grid-area: list;
 }
 
 .plate-container {
     border: 5px solid blue;
     color: white;
+    grid-area: placeholder;
 }
 
 .food-item-container {
@@ -30,4 +46,5 @@
 .random-ingredients-container {
     border: 5px solid pink;
     color: white;
+    grid-area: ingredients;
 }
