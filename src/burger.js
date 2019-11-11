@@ -60,13 +60,15 @@ function genRightAndRandomIngreds(burger){
 function renderAllIngredients(allIngredients){
     let ingredientContainer = document.querySelector('.random-ingredients-container')
     ingredientContainer.classList.add('random-ingredients-container-grid')
-
     //creating the divs for every image
     
     allIngredients.forEach(ingredient => {
         let imageContainer = document.createElement('div');
         let ingredientImage = document.createElement("img");
-        ingredientImage.srcset = ingredient.image_url
+
+        let imagePath = `src/images/Burger Ingredients/${ingredient.name}.svg`
+        ingredientImage.src = imagePath
+    
         // ingredientImage.classList.add("ui", "medium", "circular", "image");
         imageContainer.classList.add("ui", "small", "image")
         imageContainer.addEventListener('click', addToPlate) //clickeven function to add to plate divs
