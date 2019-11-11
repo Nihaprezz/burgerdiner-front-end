@@ -17,7 +17,9 @@ function createGameScreen(burger){
     let levelContainer = document.createElement('div');
     let timerContainer = document.createElement('div');
 
-    levelContainer.innerText = "This will contain the Burger Level"
+    levelContainer.classList.add('difficulty-div')
+
+    timerContainer.classList.add('timer-div');
     timerContainer.innerText = "0:15";
 
     levelTimerContainer.append(levelContainer, timerContainer); //appends the level and time tags to thier container
@@ -25,7 +27,6 @@ function createGameScreen(burger){
 
     //Ingredietns Container 
     let ingredientsContainer = document.createElement('div');
-    ingredientsContainer.innerText = "This will be the container for the ingrdients christina created";
     ingredientsContainer.classList.add('all-ingredients-container');    // used to highlight the div to know where its at
 
     //creating the divs for every ingredient

@@ -2,7 +2,7 @@
 .adding-grid-diplay {
     display: grid;
     grid-template-columns: 35% 30% auto;
-    grid-template-rows: 10% 30% auto;
+    grid-template-rows: 7% 35% auto;
     grid-template-areas:
     "header header header"
     "timer list placeholder"
