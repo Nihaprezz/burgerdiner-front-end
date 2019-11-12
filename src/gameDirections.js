@@ -35,8 +35,10 @@ function renderDirections(){
     let usernameForm = document.createElement('form');
     let usernameInput = document.createElement('input');
     let usernameSubmit = document.createElement('input');
+    let nextLine = document.createElement('br');
 
     usernameForm.id = 'username-form';
+    usernameInput.classList.add('username-here');
     usernameInput.type = 'text';
     usernameInput.name = 'username';
     usernameInput.placeholder = 'Username';
@@ -44,7 +46,7 @@ function renderDirections(){
     usernameSubmit.classList.add('ui', 'inverted', 'button', 'custom');
     usernameSubmit.value = 'Start Game!';
 
-    usernameForm.append(usernameInput, usernameSubmit);
+    usernameForm.append(usernameInput, nextLine, usernameSubmit);
     document.querySelector('#all-page').append(usernameForm);
 
     getForm().addEventListener("submit", fetchFirstBurger)
