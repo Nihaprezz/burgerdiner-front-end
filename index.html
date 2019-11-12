@@ -8,13 +8,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css">
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="game.css">
-
+    <link rel="stylesheet" href="directions.css">
   
 
     <script src="src/index.js"></script>
     <script src="src/burger.js"></script>
+    <script src="src/gameDirections.js"></script>
     <script src="src/game.js"></script>
     <script src="src/backupGameLogic.js"></script>
+
 
 
 
@@ -35,7 +37,7 @@
         <form id="username-form">
             <input type="text" name="username" placeholder="Username"> <br> <br>
             <input class='ui inverted button custom' type="submit" value="Start Game!">
-            <button class='ui inverted button custom'> How to Play </button>
+            <button class='ui inverted button custom' id="load-direction-page"> How to Play </button>
         </form>
     </div>
 </body>

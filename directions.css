@@ -1,0 +1,17 @@
+
+#directions-header{
+    color:white;
+    font-size: 60px;
+}
+
+.all-directions{
+    color: white;
+    margin-left: 20%;
+    text-align: left;
+    font-size: 20px;
+}
+
+.direction-li{
+    margin-bottom: 100%;
+    margin-top: 100%;
+}
