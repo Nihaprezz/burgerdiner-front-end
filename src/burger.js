@@ -70,10 +70,13 @@ function renderAllIngredients(allIngredients){
     allIngredients.forEach(ingredient => {
         let imageContainer = document.createElement('div');
         let ingredientImage = document.createElement("img");
+        ingredientImage.dataset.ingredientId = ingredient.id
+        ingredientImage.dataset.ingredientName = ingredient.name
 
         let imagePath = `src/images/Burger Ingredients/${ingredient.name}.svg`
         ingredientImage.src = imagePath
-    
+        
+
         // ingredientImage.classList.add("ui", "medium", "circular", "image");
         imageContainer.classList.add("ui", "small", "image")
         imageContainer.addEventListener('click', addToPlate) //clickeven function to add to plate divs
@@ -84,6 +87,3 @@ function renderAllIngredients(allIngredients){
 
 }
 
-function addToPlate(){
-    console.log('added to plate');
-}

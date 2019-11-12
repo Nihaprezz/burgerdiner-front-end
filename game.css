@@ -104,7 +104,7 @@
 }
 
 
-
+/* PLATE CONTAINER STYLING */
 
 .plate-container {
     border: 5px solid #2EC4B6;
@@ -119,6 +119,14 @@
     display: grid;
     grid-row-gap: 5%;
 }
+
+/* PLATE CONTAINER STYLING ADDING ONCE ITEMS ARE ON THE PLATE */
+
+.plate-container-grid-items {
+    align-self: center;
+    justify-self: center;
+}
+
 
 .food-item-container {
     border-top: 5px solid #2EC4B6;

@@ -1,3 +1,5 @@
+let currentRecipeIngredients = [];
+
 function createGameScreen(burger){
     let allContainer = document.querySelector('#all-page') //body container 
     allContainer.innerText = '';
@@ -31,7 +33,7 @@ function createGameScreen(burger){
     levelTimerContainer.append(levelContainer, timerContainer); //appends the level and time tags to thier container
     levelTimerContainer.classList.add('timer-level-container')
 
-    //Ingredietns Container 
+    //Ingredients Container 
     let ingredientsContainer = document.createElement('div');
     ingredientsContainer.classList.add('all-ingredients-container');    // used to highlight the div to know where its at
 
@@ -39,14 +41,22 @@ function createGameScreen(burger){
     let plateContainer = document.createElement('div');
     plateContainer.classList.add('plate-container')
     plateContainer.classList.add('plate-container-grid');
+    
+    burger.reverse()
     burger.forEach(function(array){
         let foodItem = document.createElement('div');
-        foodItem.id = `ingredient-${array.id}`
+        // foodItem.id = `ingredient-index-${array.index}`
+        foodItem.id = `ingredient-${array.ingredient.id}`
         // foodItem.innerText = 'THIS WILL BE WHERE THE INGREDIENT NEEDS TO BE DRAGGED'
         foodItem.classList.add('food-item-container');
         plateContainer.append(foodItem);
     })
 
+    //pushing all current recipe ingredients to the global variable
+    currentRecipeIngredients =[]; //redefining to 0 to make sure no old ingredients get saved
+    burger.forEach(function(ingredient){
+        currentRecipeIngredients.push(ingredient)
+    })
 
 
     //Ingredients that user will be able to click on or drag tooo
@@ -84,3 +94,6 @@ function timeUpLogic(domTimer){
     let currentPlate = document.querySelector('.plate-container')
     console.log(currentPlate);
 }
+
+
+
