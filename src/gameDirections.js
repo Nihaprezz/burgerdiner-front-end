@@ -36,6 +36,7 @@ function renderDirections(){
     let usernameInput = document.createElement('input');
     let usernameSubmit = document.createElement('input');
 
+    usernameForm.id = 'username-form';
     usernameInput.type = 'text';
     usernameInput.name = 'username';
     usernameInput.placeholder = 'Username';
@@ -46,5 +47,11 @@ function renderDirections(){
     usernameForm.append(usernameInput, usernameSubmit);
     document.querySelector('#all-page').append(usernameForm);
 
+    getForm().addEventListener("submit", fetchFirstBurger)
 }
 
+function getForm() {
+
+    return document.querySelector('#username-form');
+
+}
