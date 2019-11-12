@@ -24,7 +24,7 @@ input[type=submit]{
     padding: 8px 32px;
     text-decoration: double;
     margin: 4px 2px;
-    cursor: url(src/images/burger.png), pointer;
+    cursor: url(src/images/burger.png), pointer !important;
 }
 
 
