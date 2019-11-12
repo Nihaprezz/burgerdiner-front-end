@@ -28,7 +28,7 @@ function createGameScreen(burger){
 
     timerContainer.classList.add('timer-div');
     
-    timerContainer.innerText = '0:15';
+    timerContainer.innerText = '0:05';
 
     levelTimerContainer.append(levelContainer, timerContainer); //appends the level and time tags to thier container
     levelTimerContainer.classList.add('timer-level-container')
@@ -92,8 +92,73 @@ function timeUpLogic(domTimer){
     console.log('time is up')
     clearInterval(domTimer);
     let currentPlate = document.querySelector('.plate-container')
-    console.log(currentPlate);
+
+    let plateItems = currentPlate.querySelectorAll('img').length
+    let realReciepIngredients = currentRecipeIngredients.length
+
+    //creating the elements that will show on the win/lose page
+
+    //emptying screen and changing up the grid layout
+    let currentPage = document.querySelector('#all-page')
+    currentPage.innerText = ""
+    currentPage.classList.remove('adding-grid-diplay')
+    currentPage.classList.add('win-lose-screen');
+
+    //creating new div/card which will have the info if they passed the level or not
+    let winLoseCard = document.createElement('div')
+    winLoseCard.classList.add('win-lose-card')
+    // currentPage.append(winLoseCard);
+
+    let iconContainer = document.createElement('div')
+    
+    
+    if (plateItems === realReciepIngredients) {
+        let happyIcon = document.createElement('i')
+        happyIcon.classList.add('far', 'fa-smile-beam', 'fa-10x')
+       
+        let winText = document.createElement('h2')
+        winText.innerText = 'You have beat this level!!'
+
+        let nextLvlBtn = document.createElement('button')
+        nextLvlBtn.addEventListener('click', nextLevel)
+        nextLvlBtn.classList.add('ui', 'inverted', 'button');
+        nextLvlBtn.innerText = "Next Level?"
+
+
+        let tryAgainButton = document.createElement('button')
+        tryAgainButton.addEventListener('click', reloadPage)
+        tryAgainButton.classList.add('ui', 'inverted', 'red', 'button')
+        tryAgainButton.innerText = "Try Again?"
+
+        let winLoseBtnsContainer = document.createElement('div')
+        winLoseBtnsContainer.append(nextLvlBtn, tryAgainButton)
+
+        iconContainer.append(happyIcon)
+        winLoseCard.append(iconContainer, winText, winLoseBtnsContainer)
+        currentPage.append(winLoseCard)
+
+    } else {
+        let sadIcon = document.createElement('i')
+        sadIcon.classList.add('far', 'fa-frown-open', 'fa-10x')
+
+        let lostText = document.createElement('h2')
+        lostText.innerText = 'You have lost'
+
+        let tryAgainButton = document.createElement('button')
+        tryAgainButton.addEventListener('click', reloadPage)
+        //ui inverted red button
+        tryAgainButton.classList.add('ui', 'inverted', 'red', 'button')
+        tryAgainButton.innerText = "Try Again?"
+
+        iconContainer.append(sadIcon)
+        winLoseCard.append(iconContainer, lostText, tryAgainButton)
+        currentPage.append(winLoseCard)
+    }
 }
 
+//used to refresh the page 
+function reloadPage(){
+    location.reload()
+}
 
 

@@ -1,8 +1,11 @@
-function fetchFirstBurger(event) {
-    event.preventDefault()
+let currentBurger = 1;
 
-    let firstBurger = 1 ;
-    fetch(`http://localhost:3000/burgers_recipe/${firstBurger}`)
+function fetchFirstBurger(event) {
+    if (event != undefined){
+        event.preventDefault()
+    }
+
+    fetch(`http://localhost:3000/burgers_recipe/${currentBurger}`)
     .then( response => response.json())
     .then(function(burger){
         createGameScreen(burger);

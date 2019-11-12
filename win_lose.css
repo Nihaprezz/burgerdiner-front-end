@@ -1,0 +1,30 @@
+.win-lose-screen {
+    display: grid;
+    grid-template-columns: 20% auto 20%;
+    grid-template-rows: 20% auto 20%;
+    grid-template-areas: 
+    ". . ."
+    ". card ."
+    ". . .";
+}
+
+.win-lose-card {
+    grid-area: card;
+    border: 5px solid white;
+    
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.fa-frown-open {
+    color: white;
+    font-size: 5rem;
+}
+
+/* win card styling */
+.fa-smile-beam {
+    color: white;
+    font-size: 5rem;
+}
