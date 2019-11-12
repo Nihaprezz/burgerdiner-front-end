@@ -67,7 +67,7 @@
 }
 
 .timer-div {
-    font-size: 2.3rem;
+    font-size: 2.5rem;
     font-family: 'Wallpoet', cursive;
     text-shadow: 0px 0px 20px, 0 0 12px, 0 0 1em green, 0 0 0.5em green, 0 0 0.1em green, 0 10px 3px #000;
 }
@@ -75,12 +75,15 @@
 
 /* recipe list styling */
 .all-ingredients-container {
-    border: 5px solid #eef2f5;
-    box-shadow: 0px 0px 12px #eef2f5, inset 0px 0px 18px #eef2f5;
+    /* border: 5px solid #eef2f5;
+    box-shadow: 0px 0px 12px #eef2f5, inset 0px 0px 18px #eef2f5; */
+
+    border: 6px solid #E71D36;
+    box-shadow: 0px 0px 20px #EB465A, inset 0px 0px 30px #EB465A;
     border-radius: 18px;
     color: white;
     grid-area: list;
-    background-color: black;
+    /* background-color: black; */
     font-weight: bold;
     padding: 5%;
     font-size: 1.3rem;
@@ -118,10 +121,17 @@
 }
 
 .food-item-container {
-    border: 5px solid green;
-    border-radius: 18px;
+    border-top: 5px solid #2EC4B6;
+    border-bottom: 5px solid #2EC4B6;
+    box-shadow: 0px 0px 12px #2EC4B6, inset 0px 0px 20px #2EC4B6;
+    border-radius: 2px;
     color: white;
 }
+
+/* .food-item-container:first-child{
+    margin-top: 1%;
+} */
+
 
 .random-ingredients-container {
     border: 6px solid #E71D36;
