@@ -11,10 +11,11 @@
     font-size: 20px;
 }
 
-.direction-li{
-    margin-bottom: 100%;
-    margin-top: 100%;
+.all-directions ol li {
+    margin-bottom: 20%;
+    margin-top: 20%;
 }
+
 
 input[type=submit]{
     background-color: ghostwhite;

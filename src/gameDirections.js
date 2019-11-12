@@ -18,6 +18,7 @@ function renderDirections(){
     let dirContent = document.createElement('ol');
 
     directions.forEach(direction => {
+
         let eachDirCnt = document.createElement('li');
         eachDirCnt.innerText = direction;
         dirContent.append(eachDirCnt);
