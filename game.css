@@ -2,7 +2,9 @@
 .adding-grid-diplay {
     display: grid;
     grid-template-columns: 35% 30% auto;
-    grid-template-rows: 7% 35% auto;
+    grid-template-rows: 8% 35% auto;
+    grid-column-gap: 10px;
+    grid-row-gap: 15px;
     grid-template-areas:
     "header header header"
     "timer list placeholder"
@@ -16,8 +18,8 @@
 
 /* HEADER STYLING */
 .game-header-container {
-    border: 5px solid orange;
-    box-shadow: 0px 0px 50px #FFA500, inset 0px 0px 15px #FFA500;
+    border: 5px solid #FF9F1C;
+    box-shadow: 0px 0px 12px #FFC16E, inset 0px 0px 18px #FFC16E;
     
 
     border-radius: 18px;
@@ -27,6 +29,15 @@
     /* text-shadow: 0px 0px 20px, 0 0 12px, 0 0 1em #FFA500, 0 0 0.5em #FFA500, 0 0 0.1em #FFA500, 0 10px 3px #000; */
 }
 
+.game-header-container div h1 {
+    font-family: 'Fredoka One', cursive;
+    margin-top: 0.2%;
+    font-size: 2.5rem;
+    letter-spacing: 5px;
+    color: white;
+    text-shadow: 0px 0px 100px, 0 0 1px, 0 0 1em #FFC16E, 0 0 0.5em #FFC16E, 0 0 0.1em #FFC16E, 0 10px 3px #000;
+
+}
 /* .game-header-container h1 {
     
 } */
@@ -34,6 +45,9 @@
 /* Level and Timer Container  */
 .timer-level-container {
     border: 5px solid green;
+    box-shadow: 0px 0px 12px #2EC4B6, inset 0px 0px 18px #2EC4B6;
+ 
+    border-radius: 18px;
     color: white;
     grid-area: timer;
 
@@ -42,14 +56,58 @@
     align-items: center;
 }
 
-.all-ingredients-container {
-    border: 5px solid red;
+.difficulty-div {
+    font-size: 1.8rem;
+    font-weight: bold;
+    font-family: 'Fredoka One', cursive;
     color: white;
-    grid-area: list;
+    letter-spacing: 1px;
+    text-shadow: 0px 0px 20px, 0 0 12px, 0 0 1em #228F85, 0 0 0.5em #228F85, 0 0 0.1em #228F85, 0 10px 3px #000;
+
 }
 
+.timer-div {
+    font-size: 2.3rem;
+    font-family: 'Wallpoet', cursive;
+    text-shadow: 0px 0px 20px, 0 0 12px, 0 0 1em green, 0 0 0.5em green, 0 0 0.1em green, 0 10px 3px #000;
+}
+
+
+/* recipe list styling */
+.all-ingredients-container {
+    border: 5px solid #eef2f5;
+    box-shadow: 0px 0px 12px #eef2f5, inset 0px 0px 18px #eef2f5;
+    border-radius: 18px;
+    color: white;
+    grid-area: list;
+    background-color: black;
+    font-weight: bold;
+    padding: 5%;
+    font-size: 1.3rem;
+    font-family: 'Fredoka One', cursive;
+    letter-spacing: 2px;
+}
+
+.ingredients-list ol li{
+    padding-top: 1%;
+    padding-bottom: 1%;
+    font-family: 'Fredoka One', cursive;
+}
+
+.ingredients-list h2 {
+    text-shadow: 1px 1px 5px #eef2f5;
+    font-family: 'Fredoka One', cursive;
+    letter-spacing: 1px;
+}
+
+
+
+
 .plate-container {
-    border: 5px solid blue;
+    border: 5px solid #2EC4B6;
+    box-shadow: 0px 0px 12px #2EC4B6, inset 0px 0px 18px #2EC4B6;
+    
+    border-radius: 18px;
     color: white;
     grid-area: placeholder;
 }
@@ -61,11 +119,14 @@
 
 .food-item-container {
     border: 5px solid green;
+    border-radius: 18px;
     color: white;
 }
 
 .random-ingredients-container {
-    border: 5px solid pink;
+    border: 6px solid #E71D36;
+    box-shadow: 0px 0px 20px #EB465A, inset 0px 0px 30px #EB465A;
+    border-radius: 15px;
     color: white;
     grid-area: ingredients;
 }

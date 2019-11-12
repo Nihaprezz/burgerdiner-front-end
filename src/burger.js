@@ -23,12 +23,14 @@ function renderFirstBurger(burger){
     //burger name
     let burgerName = burger[0].recipe.name
     let difficultyDiv = document.querySelector('.difficulty-div')
-    difficultyDiv.innerText = `This is the ${burgerName} level`
+    difficultyDiv.innerHTML = `Level: ${burger[0].recipe.id} <br><br> | ${burgerName} |`
     
     //rendering the ingredients 
     let ingredientsContainer = document.querySelector('.all-ingredients-container')
     let ingredients = document.createElement('div');
-    ingredients.innerText = `Ingredients for the ${burgerName} recipe!`
+    let ingredientsText = document.createElement('h2');
+    ingredientsText.innerText = `${burgerName} Recipe!`
+    ingredients.append(ingredientsText);
     ingredients.classList.add('ingredients-list');
 
     let ingredientsOl = document.createElement('ol');

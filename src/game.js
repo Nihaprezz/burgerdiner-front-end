@@ -7,9 +7,14 @@ function createGameScreen(burger){
     //header for the game screeen
     let gameHeaderContainer = document.createElement('div')
     gameHeaderContainer.classList.add('game-header-container')
+
+    let headerTextContainer = document.createElement('div');
+
     let gameHeader = document.createElement('h1')
     gameHeader.innerText = "Burger Diner"
-    gameHeaderContainer.append(gameHeader);
+
+    headerTextContainer.append(gameHeader)
+    gameHeaderContainer.append(headerTextContainer);
 
 
     //level and timer 
