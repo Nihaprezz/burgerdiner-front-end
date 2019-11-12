@@ -15,3 +15,13 @@
     margin-bottom: 100%;
     margin-top: 100%;
 }
+
+input[type=submit]{
+    background-color: ghostwhite;
+    border: none;
+    color: black;
+    padding: 8px 32px;
+    text-decoration: double;
+    margin: 4px 2px;
+    cursor: url(src/images/burger.png), pointer !important;
+}

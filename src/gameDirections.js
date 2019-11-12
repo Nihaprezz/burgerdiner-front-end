@@ -32,4 +32,19 @@ function renderDirections(){
     dirDiv.append(dirH3, dirContent);
     allPage.appendChild(dirDiv);
 
+    let usernameForm = document.createElement('form');
+    let usernameInput = document.createElement('input');
+    let usernameSubmit = document.createElement('input');
+
+    usernameInput.type = 'text';
+    usernameInput.name = 'username';
+    usernameInput.placeholder = 'Username';
+    usernameSubmit.type = 'submit';
+    usernameSubmit.classList.add('ui', 'inverted', 'button', 'custom');
+    usernameSubmit.value = 'Start Game!';
+
+    usernameForm.append(usernameInput, usernameSubmit);
+    document.querySelector('#all-page').append(usernameForm);
+
 }
+
