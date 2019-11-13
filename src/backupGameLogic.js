@@ -1,8 +1,9 @@
 //ADDING TO PLATE GAME LOGIC
 function addToPlate(event){
-    gameSessionTimer = difficultyTimer; //gameSessionTimer will be used to monitor this session
-
-
+    if(gameSessionTimer == 0){
+        timeUpLogic();
+    }
+    
     let clickedIngredientId = event.target.dataset.ingredientId
     currentRecipeIngredients.forEach(function(currentIngredient){ //going through ingredient id, if it is right it will run the next code
         if (currentIngredient.ingredient.id == clickedIngredientId){
@@ -42,7 +43,8 @@ function addToPlate(event){
        if(event.target.dataset.ingredientId == ingredient.id){
             event.target.classList.add('wrong-animation')
             gameSessionTimer--;
-            debugger
+            
+            updateTimerDom()
        }
     })    
 
@@ -59,4 +61,14 @@ function filterWrongIngredients(){
     })
 
     return filteredIngredientArray
+}
+
+function updateTimerDom(){
+    let currentTime = document.querySelector('.timer-div')
+
+    if (gameSessionTimer > 9 ){
+        currentTime.innerText = `0:${gameSessionTimer}`;
+    } else {
+        currentTime.innerText = `0:0${gameSessionTimer}`
+    }
 }

@@ -3,9 +3,9 @@
 //difficultyTimer - keeps track of the timer will increment the higher the level goes
 
 let currentRecipeIngredients = [];
-let difficultyTimer = 15;
+let difficultyTimer = 10;
 let allDatabaseIngredients = [];
-let gameSessionTimer = 0;
+let gameSessionTimer = difficultyTimer;
 
 function createGameScreen(burger){
     let allContainer = document.querySelector('#all-page') //body container 
@@ -37,10 +37,10 @@ function createGameScreen(burger){
 
 
     //checks the difficultyTimer to append the right number of 0's to it
-    if (difficultyTimer > 9 ){
-        timerContainer.innerText = `0:${difficultyTimer}`;
+    if (gameSessionTimer > 9 ){
+        timerContainer.innerText = `0:${gameSessionTimer}`;
     } else {
-        timerContainer.innerText = `0:0${difficultyTimer}`
+        timerContainer.innerText = `0:0${gameSessionTimer}`
     }
 
     levelTimerContainer.append(levelContainer, timerContainer); //appends the level and time tags to thier container
@@ -86,15 +86,16 @@ function createGameScreen(burger){
 function createTimeLogic(){
     let timerHTMLTag = document.querySelector('.timer-div')
     let timerCounter = parseInt(timerHTMLTag.innerText.split(':')[1])
- 
+    
     let domTimer = setInterval(function(){
         console.log(timerCounter)
-        timerCounter--
+        
+        gameSessionTimer--;
 
-        if (timerCounter > 9 ){
-            timerHTMLTag.innerText = `0:${timerCounter}`;
-        } else if (timerCounter >= 0) {
-            timerHTMLTag.innerText = `0:0${timerCounter}`
+        if (gameSessionTimer > 9 ){
+            timerHTMLTag.innerText = `0:${gameSessionTimer}`;
+        } else if (gameSessionTimer >= 0) {
+            timerHTMLTag.innerText = `0:0${gameSessionTimer}`
         } else {
             timeUpLogic(domTimer)
         }

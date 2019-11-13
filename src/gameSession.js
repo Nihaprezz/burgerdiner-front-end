@@ -9,8 +9,9 @@ function nextLevel(){
     bodyTag.className = "";
     currentBurger++; //moves to the next burger
     
-    difficultyTimer = difficultyTimer + 2; 
+    gameSessionTimer = difficultyTimer;
+    // difficultyTimer = difficultyTimer + 2; 
     //increments the timer
-    
+
     fetchFirstBurger()
 }
