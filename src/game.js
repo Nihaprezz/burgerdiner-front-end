@@ -3,7 +3,7 @@
 //difficultyTimer - keeps track of the timer will increment the higher the level goes
 
 let currentRecipeIngredients = [];
-let difficultyTimer = 10;
+let difficultyTimer = 15;
 let allDatabaseIngredients = [];
 let gameSessionTimer = difficultyTimer;
 

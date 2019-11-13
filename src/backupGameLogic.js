@@ -1,9 +1,9 @@
 //ADDING TO PLATE GAME LOGIC
 function addToPlate(event){
-    if(gameSessionTimer == 0){
+    if(gameSessionTimer === 0){
         timeUpLogic();
     }
-    
+
     let clickedIngredientId = event.target.dataset.ingredientId
     currentRecipeIngredients.forEach(function(currentIngredient){ //going through ingredient id, if it is right it will run the next code
         if (currentIngredient.ingredient.id == clickedIngredientId){
