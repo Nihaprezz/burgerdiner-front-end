@@ -13,6 +13,9 @@ function renderDirections(){
     document.getElementById('type-username').remove();
 
     let allPage = document.getElementById('all-page');
+    let directionsAndIngredients = document.createElement('div');
+    directionsAndIngredients.id = 'dir-ing-container';
+
     let dirDiv = document.createElement('div');
     let dirH3 = document.createElement('h3');
     let dirContent = document.createElement('ol');
@@ -31,7 +34,8 @@ function renderDirections(){
 
 
     dirDiv.append(dirH3, dirContent);
-    allPage.appendChild(dirDiv);
+    directionsAndIngredients.appendChild(dirDiv);
+    allPage.appendChild(directionsAndIngredients);
 
     let usernameForm = document.createElement('form');
     let usernameInput = document.createElement('input');
@@ -48,7 +52,7 @@ function renderDirections(){
     usernameSubmit.value = 'Start Game!';
 
     usernameForm.append(usernameInput, nextLine, usernameSubmit);
-    document.querySelector('#all-page').append(usernameForm);
+    dirDiv.append(usernameForm);
 
     getForm().addEventListener("submit", fetchFirstBurger);
 
@@ -72,6 +76,9 @@ function eachIngredientInfo(ingredientsArray) {
 
     let allPAGE = document.getElementById('all-page');
 
+    let dirAndIng = document.getElementById('dir-ing-container');
+
+
     let ingContainer = document.createElement('div');
     ingContainer.classList.add('ingredients-introduction-container');
 
@@ -86,8 +93,8 @@ function eachIngredientInfo(ingredientsArray) {
         ingName.innerText = ingredient.name;
 
         ingContainer.append(ingHolder, imgContainer, ingName);
-
-        allPAGE.appendChild(ingContainer)
+        dirAndIng.appendChild(ingContainer);
+        allPAGE.appendChild(dirAndIng)
     })
 
 }
