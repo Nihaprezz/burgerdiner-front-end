@@ -5,10 +5,15 @@
 }
 
 .all-directions{
+    border: 6px solid antiquewhite;
+    box-shadow: 0px 0px 20px #ffea96, inset 0px 0px 30px #fff1b8;
+    border-radius: 15px;
     color: white;
     margin-left: 5%;
+    margin-right: 5%;
     text-align: left;
     font-size: 20px;
+    animation: blink-direction-border-1 2.5s ease infinite;
 }
 
 .all-directions ol li {
@@ -43,18 +48,48 @@ input[type=submit]{
 .ingredients-introduction-container {
     border: 6px solid lightskyblue;
     column-count: 3;
+    margin-left: 5%;
+    margin-right: 5%;
     box-shadow: 0px 0px 20px #035afc, inset 0px 0px 30px #0373fc;
     border-radius: 15px;
     color: white;
-
+    animation: blink-ingredients-border 2.5s ease infinite;
 }
 
 .image-card {
-    height: 100px;
-    width: 100px;
+    height: 150px;
+    width: 150px;
     margin-top: 10px;
 }
 
 h4{
     font-size: 1rem;
+}
+
+#username-form{
+    margin: 3% 38%;
+    text-align: center;
+}
+
+
+@keyframes blink-direction-border-1 {
+    31%, 33%, 62%, 67% {
+        border-color: #fff;
+        box-shadow: 0px 0px 600px #ffea96, inset 0px 0px 50px #fff1b8;
+    }
+    32%, 63% {
+        border-color: #444;
+        box-shadow: none;
+    }
+}
+
+@keyframes blink-ingredients-border {
+    31%, 33%, 62%, 67% {
+        border-color: #fff;
+        box-shadow: 0px 0px 600px #035afc, inset 0px 0px 50px #0373fc;
+    }
+    32%, 63% {
+        border-color: #444;
+        box-shadow: none;
+    }
 }

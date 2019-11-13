@@ -1,6 +1,7 @@
 const directions = [
     'Create a username and click start game button.',
-    'You will have 15 seconds to select all of your ingredients for your burger.',
+    'You will have 6 seconds in level 1 to select all of your ingredients for your burger.',
+    'The time limit will change depending on the level. Make sure you PAY ATTENTION!',
     'The countdown starts automatically when the game page loads.',
     'Your goal is to see the ingredients list and select all the ingredients in order before the timer runs out.',
     'When you succeed picking out all the ingredients in order, you can go on to the next level.',
