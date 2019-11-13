@@ -31,3 +31,28 @@ input[type=submit]{
     margin-top: 20%;
     margin-bottom: 10%;
 }
+
+/*.directions-grid-display {*/
+/*    display: grid | inline-grid;*/
+/*    grid-template-columns: 50% 50%;*/
+/*    grid-template-rows: 25% 170px auto;*/
+/*}*/
+
+.ingredients-introduction-container {
+    border: 6px solid lightskyblue;
+    column-count: 3;
+    box-shadow: 0px 0px 20px #035afc, inset 0px 0px 30px #0373fc;
+    border-radius: 15px;
+    color: white;
+    /*grid-area: ingredients;*/
+}
+
+.image-card {
+    height: 250px;
+    width: 250px;
+    margin-top: 30px;
+}
+
+h4{
+    font-size: 1.5rem;
+}

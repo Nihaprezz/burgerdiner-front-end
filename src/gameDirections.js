@@ -8,11 +8,17 @@ const directions = [
     'Good Luck!'
 ];
 
-function renderDirections(){
-    console.log( 'give me directions! ');
-    document.getElementById('type-username').remove();
 
+
+
+function renderDirections(){
+
+    document.getElementById('type-username').remove(); //removes everything underneath the game name
+
+
+    //RENDERS DIRECTIONS HERE
     let allPage = document.getElementById('all-page');
+    allPage.classList.add = 'directions-gird-display';
     let dirDiv = document.createElement('div');
     let dirH3 = document.createElement('h3');
     let dirContent = document.createElement('ol');
@@ -30,31 +36,68 @@ function renderDirections(){
     dirH3.innerText = 'Directions';
 
 
-    dirDiv.append(dirH3, dirContent);
+    //USERNAME FORM HERE
+    let usernameForm = document.createElement('form');
+
+    usernameForm.innerHTML = `
+    <input class="username-here" 
+    id="username-id" type="text" 
+    name="username" placeholder="Username"> 
+    
+    <br>
+    
+    <input class="ui inverted button custom" 
+    type="submit" value="Start Game!" >
+    `;
+
+    dirDiv.append(dirH3, dirContent, usernameForm);
     allPage.appendChild(dirDiv);
 
-    let usernameForm = document.createElement('form');
-    let usernameInput = document.createElement('input');
-    let usernameSubmit = document.createElement('input');
-    let nextLine = document.createElement('br');
 
-    usernameForm.id = 'username-form';
-    usernameInput.classList.add('username-here');
-    usernameInput.type = 'text';
-    usernameInput.name = 'username';
-    usernameInput.placeholder = 'Username';
-    usernameSubmit.type = 'submit';
-    usernameSubmit.classList.add('ui', 'inverted', 'button', 'custom');
-    usernameSubmit.value = 'Start Game!';
+    //INGREDIENTS INTRODUCTION HERE
+    ingredientsIntro();
 
-    usernameForm.append(usernameInput, nextLine, usernameSubmit);
-    document.querySelector('#all-page').append(usernameForm);
+    renderForm().addEventListener("submit", fetchFirstBurger);
 
-    getForm().addEventListener("submit", fetchFirstBurger)
 }
 
-function getForm() {
+function renderForm() {
 
     return document.querySelector('#username-form');
 
 }
+
+
+function ingredientsIntro() {
+
+fetch('http://localhost:3000/ingredients')
+    .then(response => response.json())
+    .then(ingredientsArray =>
+        eachIngredientInfo(ingredientsArray))
+}
+
+function eachIngredientInfo(ingredientsArray) {
+
+    let allPAGE = document.getElementById('all-page');
+
+    let ingContainer = document.createElement('div');
+    ingContainer.classList.add('ingredients-introduction-container');
+
+    ingredientsArray.forEach(ingredient => {
+        let ingHolder = document.createElement('div');
+        ingHolder.classList.add('each-ingredients-introduction-container');
+
+        let imgContainer = document.createElement('img');
+        imgContainer.classList.add('image-card');
+        imgContainer.src = `src/images/Burger Ingredients/${ingredient.name}.svg`;
+        let ingName = document.createElement('h4');
+        ingName.innerText = ingredient.name;
+
+        ingContainer.append(ingHolder, imgContainer, ingName);
+
+        allPAGE.appendChild(ingContainer)
+    })
+
+}
+
+

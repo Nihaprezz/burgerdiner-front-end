@@ -6,6 +6,6 @@ document.addEventListener("DOMContentLoaded", () =>{
 
 function getForm() {
 
-    return document.querySelector('#username-form');
+    return document.querySelector('#c');
 
 }
