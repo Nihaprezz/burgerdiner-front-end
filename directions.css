@@ -44,7 +44,6 @@ input[type=submit]{
     box-shadow: 0px 0px 20px #035afc, inset 0px 0px 30px #0373fc;
     border-radius: 15px;
     color: white;
-    /*grid-area: ingredients;*/
 }
 
 .image-card {

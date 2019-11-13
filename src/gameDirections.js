@@ -4,21 +4,15 @@ const directions = [
     'The countdown starts automatically when the game page loads.',
     'Your goal is to see the ingredients list and select all the ingredients in order before the timer runs out.',
     'When you succeed picking out all the ingredients in order, you can go on to the next level.',
-    'There are total of 12 levels, 12 being the hardest of them all.',
+    'There are total of 10 levels, 10 being the hardest of them all.',
     'Good Luck!'
 ];
 
-
-
-
 function renderDirections(){
+    console.log( 'give me directions!');
+    document.getElementById('type-username').remove();
 
-    document.getElementById('type-username').remove(); //removes everything underneath the game name
-
-
-    //RENDERS DIRECTIONS HERE
     let allPage = document.getElementById('all-page');
-    allPage.classList.add = 'directions-gird-display';
     let dirDiv = document.createElement('div');
     let dirH3 = document.createElement('h3');
     let dirContent = document.createElement('ol');
@@ -36,37 +30,35 @@ function renderDirections(){
     dirH3.innerText = 'Directions';
 
 
-    //USERNAME FORM HERE
-    let usernameForm = document.createElement('form');
-
-    usernameForm.innerHTML = `
-    <input class="username-here" 
-    id="username-id" type="text" 
-    name="username" placeholder="Username"> 
-    
-    <br>
-    
-    <input class="ui inverted button custom" 
-    type="submit" value="Start Game!" >
-    `;
-
-    dirDiv.append(dirH3, dirContent, usernameForm);
+    dirDiv.append(dirH3, dirContent);
     allPage.appendChild(dirDiv);
 
+    let usernameForm = document.createElement('form');
+    let usernameInput = document.createElement('input');
+    let usernameSubmit = document.createElement('input');
+    let nextLine = document.createElement('br');
 
-    //INGREDIENTS INTRODUCTION HERE
+    usernameForm.id = 'username-form';
+    usernameInput.classList.add('username-here');
+    usernameInput.type = 'text';
+    usernameInput.name = 'username';
+    usernameInput.placeholder = 'Username';
+    usernameSubmit.type = 'submit';
+    usernameSubmit.classList.add('ui', 'inverted', 'button', 'custom');
+    usernameSubmit.value = 'Start Game!';
+
+    usernameForm.append(usernameInput, nextLine, usernameSubmit);
+    document.querySelector('#all-page').append(usernameForm);
+
+    getForm().addEventListener("submit", fetchFirstBurger);
+
     ingredientsIntro();
-
-    renderForm().addEventListener("submit", fetchFirstBurger);
-
 }
 
-function renderForm() {
+function getForm() {
 
     return document.querySelector('#username-form');
-
 }
-
 
 function ingredientsIntro() {
 
