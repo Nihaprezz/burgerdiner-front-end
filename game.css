@@ -2,7 +2,7 @@
 .adding-grid-diplay {
     display: grid;
     grid-template-columns: 35% 30% auto;
-    grid-template-rows: 8% 35% auto;
+    grid-template-rows: 8% auto auto;
     grid-column-gap: 10px;
     grid-row-gap: 15px;
     grid-template-areas:
@@ -107,12 +107,19 @@
 /* PLATE CONTAINER STYLING */
 
 .plate-container {
-    border: 5px solid #2EC4B6;
+    border-left: 5px solid #2EC4B6;
+    border-right: 5px solid #2EC4B6;
     box-shadow: 0px 0px 12px #2EC4B6, inset 0px 0px 18px #2EC4B6;
     
-    border-radius: 18px;
     color: white;
     grid-area: placeholder;
+
+
+    /* border styling to give it round borders ... not sure if it works */
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 .plate-container-grid {
@@ -154,4 +161,30 @@
     grid-template-columns: 33% 33% auto;
     grid-gap: 5px;
     justify-items: center;
+}
+
+
+
+/* Wrong Pick Class and Animation */
+
+.wrong-animation{
+    animation: shake 0.8s linear 1;
+}
+
+@keyframes shake {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+      
+    20%, 80% {
+        transform: translate3d(2px, 0, 0);
+    }
+    
+    30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+    
+    40%, 60% {
+        transform: translate3d(4px, 0, 0);
+    }
 }

@@ -1,3 +1,4 @@
+//GLOBAL FOR WHAT LEVEL THE GAME IS CURRENTLY ON
 let currentBurger = 1;
 
 function fetchFirstBurger(event) {
@@ -41,6 +42,8 @@ function renderFirstBurger(burger){
 
     burger.forEach(function(ingredients) {
         let ingredientsLi = document.createElement('li');
+        //adding class tags for DOM manipulation later on 
+        ingredientsLi.classList.add(`list-ingredientId-${ingredients.ingredient.id }`)
         ingredientsLi.innerText = ingredients.ingredient.name;
         ingredientsOl.append(ingredientsLi);
     });
@@ -70,6 +73,8 @@ function renderAllIngredients(allIngredients){
     ingredientContainer.classList.add('random-ingredients-container-grid');
     //creating the divs for every image
     
+    shuffleIngredients(allIngredients) //will shuffle the order of the ingredients
+
     allIngredients.forEach(ingredient => {
         let imageContainer = document.createElement('div');
         let ingredientImage = document.createElement("img");
@@ -90,3 +95,14 @@ function renderAllIngredients(allIngredients){
 
 }
 
+function shuffleIngredients(arrayOfIngreds){
+    let i = arrayOfIngreds.length - 1;
+    for(i; i > 0; i--){
+        const j = Math.floor(Math.random() * i)
+        const temp = arrayOfIngreds[i]
+        arrayOfIngreds[i] = arrayOfIngreds[j]
+        arrayOfIngreds[j] = temp
+      }
+
+    return arrayOfIngreds
+}
