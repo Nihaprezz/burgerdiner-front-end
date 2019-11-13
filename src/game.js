@@ -1,4 +1,11 @@
+//GLOBALS : 
+//currentRecipeIngredients - holds the ingredient objects for the recipe its on
+//difficultyTimer - keeps track of the timer will increment the higher the level goes
+
 let currentRecipeIngredients = [];
+let difficultyTimer = 15;
+let allDatabaseIngredients = [];
+let gameSessionTimer = 0;
 
 function createGameScreen(burger){
     let allContainer = document.querySelector('#all-page') //body container 
@@ -27,8 +34,14 @@ function createGameScreen(burger){
     levelContainer.classList.add('difficulty-div')
 
     timerContainer.classList.add('timer-div');
-    
-    timerContainer.innerText = '0:05';
+
+
+    //checks the difficultyTimer to append the right number of 0's to it
+    if (difficultyTimer > 9 ){
+        timerContainer.innerText = `0:${difficultyTimer}`;
+    } else {
+        timerContainer.innerText = `0:0${difficultyTimer}`
+    }
 
     levelTimerContainer.append(levelContainer, timerContainer); //appends the level and time tags to thier container
     levelTimerContainer.classList.add('timer-level-container')
@@ -47,7 +60,6 @@ function createGameScreen(burger){
         let foodItem = document.createElement('div');
         // foodItem.id = `ingredient-index-${array.index}`
         foodItem.id = `ingredient-${array.ingredient.id}`
-        // foodItem.innerText = 'THIS WILL BE WHERE THE INGREDIENT NEEDS TO BE DRAGGED'
         foodItem.classList.add('food-item-container');
         plateContainer.append(foodItem);
     })
@@ -63,7 +75,8 @@ function createGameScreen(burger){
     let randomIngredientsContainer  = document.createElement('div');
     randomIngredientsContainer.classList.add('random-ingredients-container')
 
-
+    //calls the fetch on all ingredients to save them to a global variable
+    fetchAllIngredients()
 
     allContainer.append(gameHeaderContainer, levelTimerContainer, ingredientsContainer, plateContainer, randomIngredientsContainer);
 }
@@ -161,4 +174,11 @@ function reloadPage(){
     location.reload()
 }
 
-
+//used to fetch all the ingredients
+function fetchAllIngredients(){
+    fetch('http://localhost:3000/ingredients')
+    .then(response => response.json())
+    .then(function(allIngrededients){
+        allIngrededients.forEach(ingredient => allDatabaseIngredients.push(ingredient))
+    })
+}

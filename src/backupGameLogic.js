@@ -1,8 +1,10 @@
 //ADDING TO PLATE GAME LOGIC
 function addToPlate(event){
+    gameSessionTimer = difficultyTimer; //gameSessionTimer will be used to monitor this session
+
+
     let clickedIngredientId = event.target.dataset.ingredientId
-    
-    currentRecipeIngredients.forEach(function(currentIngredient){ //going through ingredient id, if it is right it will 
+    currentRecipeIngredients.forEach(function(currentIngredient){ //going through ingredient id, if it is right it will run the next code
         if (currentIngredient.ingredient.id == clickedIngredientId){
             console.log("this is right ingredient")
             event.target.style.opacity = "30%"
@@ -27,9 +29,34 @@ function addToPlate(event){
                 plateImage.dataset.ingredientName = event.target.dataset.ingredientName
 
                 plateContainerDiv.append(plateImage)
+                
+                let ingredListItem = document.querySelector(`.list-ingredientId-${clickedIngredientId}`)
+                ingredListItem.style.textDecoration = "line-through";
+                ingredListItem.style.color = "#2EC4B6"
+                ingredListItem.style.textShadow = "0px 0px 100px, 0 0 1px, 0 0 1em #2EC4B6, 0 0 0.5em #2EC4B6, 0 0 0.1em #2EC4B6, 0 10px 3px #000"
             }           
+        } 
+    })
+  
+    filterWrongIngredients().forEach(function(ingredient){
+       if(event.target.dataset.ingredientId == ingredient.id){
+            event.target.classList.add('wrong-animation')
+            gameSessionTimer--;
+            debugger
+       }
+    })    
+
+}
+
+function filterWrongIngredients(){
+    let filteredIngredientArray = []
+    let filteredOnlyIngredients = currentRecipeIngredients.map(ingredient => ingredient.ingredient.name)
+
+    allDatabaseIngredients.forEach(function(ingredient){
+        if (!filteredOnlyIngredients.includes(ingredient.name)) {
+            filteredIngredientArray.push(ingredient)
         }
     })
 
-
+    return filteredIngredientArray
 }
