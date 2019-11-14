@@ -34,13 +34,13 @@ function nextLevel(){
             break;  
     }
 
-    gameSessionTimer = difficultyTimer;
+    gameSessionTimer = difficultyTimer; //resets the gameSessionTimer
     // difficultyTimer = difficultyTimer + 2; 
     //increments the timer
 
 
     //check and if the level is greater then 10, it will render the beating game screen
-    if (currentBurger < 10 ){
+    if (currentBurger < 10){
         fetchFirstBurger() //starts the next session
     } else {
         renderBeatGameScreen()
@@ -56,8 +56,8 @@ function renderBeatGameScreen(){
     winLoseCard.classList.add('win-lose-card')
     winLoseCard.classList.add('beat-game-card-styling');
 
-    let iconContainer = document.createElement('div')
-    iconContainer.classList.add('beat-game-style')
+    let gifContainer = document.createElement('div')
+    gifContainer.classList.add('beat-game-style')
 
     let gif = document.createElement('div');
     gif.innerHTML = `
@@ -66,18 +66,18 @@ function renderBeatGameScreen(){
     // let sadIcon = document.createElement('i')
     // sadIcon.classList.add('far', 'fa-frown-open', 'fa-10x')
 
-    let lostText = document.createElement('h2')
-    lostText.classList.add('beat-game-card-text');
-    lostText.innerHTML = 'You have beaten all the levels. <br> You are the BURGER DINER MASTER!'
+    let beatGameText = document.createElement('h2')
+    beatGameText.classList.add('beat-game-card-text');
+    beatGameText.innerHTML = 'You have beaten all the levels. <br> You are the BURGER DINER MASTER!'
 
-    let tryAgainButton = document.createElement('button')
-    tryAgainButton.addEventListener('click', reloadPage)
+    let goHomeButton = document.createElement('button')
+    goHomeButton.addEventListener('click', reloadPage)
     
     //ui inverted teal basic button
-    tryAgainButton.classList.add('ui', 'inverted', 'teal', 'basic', 'button')
-    tryAgainButton.innerText = "Home Screen"
+    goHomeButton.classList.add('ui', 'inverted', 'teal', 'basic', 'button')
+    goHomeButton.innerText = "Home Screen"
 
-    iconContainer.append(gif)
-    winLoseCard.append(iconContainer, lostText, tryAgainButton)
+    gifContainer.append(gif)
+    winLoseCard.append(gifContainer, beatGameText, goHomeButton)
     currentPage.append(winLoseCard)
 }

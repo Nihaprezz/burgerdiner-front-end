@@ -6,12 +6,17 @@ let currentRecipeIngredients = [];
 let difficultyTimer = 6;
 let allDatabaseIngredients = [];
 let gameSessionTimer = difficultyTimer;
+let dinerGameMusic = new Audio("src/assets/gamebackground.m4a"); //<--- global for music
+
 
 function createGameScreen(burger){
     let allContainer = document.querySelector('#all-page') //body container 
     allContainer.innerText = '';
     allContainer.classList.add('adding-grid-diplay')
     allContainer.classList.add('game-container'); //used just to highlight the container with a white border
+
+    //game music 
+    dinerGameMusic.play()
 
     //header for the game screeen
     let gameHeaderContainer = document.createElement('div')
@@ -98,6 +103,7 @@ function createTimeLogic(){
             timerHTMLTag.innerText = `0:0${gameSessionTimer}`
         } else {
             timeUpLogic(domTimer)
+            dinerGameMusic.pause()
         }
     },1000);
 }
