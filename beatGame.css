@@ -1,0 +1,18 @@
+.beat-game-style{
+    width: 100%;
+    position: relative;
+    height: 0;
+    padding-bottom: 53%;
+    padding-right: 95%;
+}
+
+.beat-game-card-styling {
+    border-radius: 18px;
+    border: 5px solid #2EC4B6;
+    box-shadow: 0px 0px 12px #2EC4B6, inset 0px 0px 18px #2EC4B6;
+}
+
+.beat-game-card-text {
+    color: #2EC4B6;
+    text-shadow: 0px 0px 20px, 0 0 12px, 0 0 1em #228F85, 0 0 0.5em #228F85, 0 0 0.1em #228F85, 0 10px 3px #000;
+}
