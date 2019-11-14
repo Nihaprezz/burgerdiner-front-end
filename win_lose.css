@@ -8,10 +8,20 @@
     ". . .";
 }
 
-.win-lose-card {
+.win-card {
     grid-area: card;
-    border: 5px solid white;
-    
+    border: 5px solid darkseagreen;
+    animation: blink-smile-border 4s ease-in infinite;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.lose-card{
+    grid-area: card;
+    border: 5px solid indianred;
+    animation: blink-frown-border 4s ease-in infinite;
     display: grid;
     align-items: center;
     justify-content: center;
@@ -19,12 +29,60 @@
 }
 
 .fa-frown-open {
-    color: white;
+    color: indianred;
     font-size: 5rem;
+    animation: blink-frown 2s steps(5, start) infinite;
+    -webkit-animation: blink-frown 1s steps(5, start) infinite;
 }
 
 /* win card styling */
 .fa-smile-beam {
-    color: white;
+    color: lightgreen;
     font-size: 5rem;
+    animation: blink-smile 4s steps(5, start) infinite;
+    -webkit-animation: blink-smile 1s steps(5, start) infinite;
+}
+
+@keyframes blink-smile-border {
+    31%, 33%, 62%, 67% {
+        border-color: #fff;
+        box-shadow: 0px 0px 600px darkseagreen, inset 0px 0px 50px lightgreen;
+    }
+    32%, 63% {
+        border-color: #444;
+        box-shadow: none;
+    }
+}
+
+@keyframes blink-frown-border {
+    31%, 33%, 62%, 67% {
+        border-color: #fff;
+        box-shadow: 0px 0px 600px indianred, inset 0px 0px 50px palevioletred;
+    }
+    32%, 63% {
+        border-color: #444;
+        box-shadow: none;
+    }
+}
+
+@keyframes blink-smile {
+    to {
+        visibility: hidden;
+    }
+}
+@-webkit-keyframes blink-smile {
+    to {
+        visibility: hidden;
+    }
+}
+
+@keyframes blink-frown {
+    to {
+        visibility: hidden;
+    }
+}
+@-webkit-keyframes blink-frown {
+    to {
+        visibility: hidden;
+    }
 }
