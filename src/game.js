@@ -133,6 +133,7 @@ function timeUpLogic(domTimer){
     
     
     if (plateItems === realReciepIngredients) {
+        winLoseCard.classList.add('win-card')
         let happyIcon = document.createElement('i')
         happyIcon.classList.add('far', 'fa-smile-beam', 'fa-10x')
        
@@ -158,6 +159,7 @@ function timeUpLogic(domTimer){
         currentPage.append(winLoseCard)
 
     } else {
+        winLoseCard.classList.add('lose-card')
         let sadIcon = document.createElement('i')
         sadIcon.classList.add('far', 'fa-frown-open', 'fa-10x')
 
